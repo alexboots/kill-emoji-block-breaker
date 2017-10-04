@@ -1,0 +1,10 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="LevelManager">
+			<method name="ChangeLevel"/>
+			<method name="QuitGame"/>
+			<method name="ChangeLevel"/>
+			<method name="ChangeLevel"/>
+		</type>
+	</assembly>
+</linker>
