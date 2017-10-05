@@ -15,6 +15,7 @@ public class Brick : MonoBehaviour {
 	private Ball ball;
 
 
+
 	void Awake() {
 		// If you dont reset this after the player loses, more bricks get added on Start() 
 		// 	so you can never win :|
@@ -33,11 +34,6 @@ public class Brick : MonoBehaviour {
 		}
 		levelManager = GameObject.FindObjectOfType<LevelManager> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	void OnCollisionExit2D(Collision2D collision) {
 		AudioSource.PlayClipAtPoint (crack, transform.position);		
@@ -47,14 +43,20 @@ public class Brick : MonoBehaviour {
 	}
 
 	void handleHits () {
+		
 		int maxHits = hitSprites.Length + 1;
 		timesHit ++;
+
 
 		// Always destroy game object
 		if (timesHit >= maxHits) {
 			breakableCount--;
-			Debug.Log ("BROKEN");
-			Instantiate(smoke, gameObject.transform.position, Quaternion.identity);
+
+			GameObject smokePuff = Instantiate(smoke, gameObject.transform.position, Quaternion.identity);
+			Color smokeColor = Color.black;
+			smokeColor.a = 0.3f;
+			smokePuff.GetComponent<ParticleSystem> ().startColor = smokeColor;
+
 
 			Destroy (gameObject);
 			levelManager.BrickDestroyed ();

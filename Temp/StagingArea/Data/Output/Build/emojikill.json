@@ -1,9 +1,0 @@
-{
-"TOTAL_MEMORY": 268435456,
-"dataUrl": "emojikill.data.unityweb",
-"asmCodeUrl": "emojikill.asm.code.unityweb",
-"asmMemoryUrl": "emojikill.asm.memory.unityweb",
-"asmFrameworkUrl": "emojikill.asm.framework.unityweb",
-"splashScreenStyle": "Dark",
-"backgroundColor": "#222C36"
-}
