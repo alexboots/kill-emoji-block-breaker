@@ -16,6 +16,8 @@ public class Brick : MonoBehaviour {
 
 
 	void Awake() {
+		// If you dont reset this after the player loses, more bricks get added on Start() 
+		// 	so you can never win :|
 		breakableCount = 0;
 	}
 
